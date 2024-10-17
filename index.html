@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patoo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+    href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css"
+    rel="stylesheet"
+    type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+      .pacifo{
+        font-family: "Pacifico", cursive;
+      }
+      #spinner {
+            display: none;
+      }
+      .primaryBtn{
+          :hover{
+            background-color: white;
+            color: #0e7a81;
+          }
+      }
+      .secondaryBtn{
+        :hover{
+          background-color: #0e7a81;
+          color: white;
+        }
+      }
+
+    </style>
+</head>
+<body>
+    <header class="mb-24 bg-white">
+        <nav>
+            <div class="navbar bg-base-100 w-11/12 mx-auto ">
+                <div class="dropdown mr-1 sm:hidden ">
+                  <div tabindex="0" role="button" class="border border-emerald-100 rounded-full w-10 h-10 p-1 flex justify-center items-center ">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-6 w-6 text-gray-400"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor">
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M4 6h16M4 12h8m-8 6h16" />
+                    </svg>
+                  </div>
+                  <ul
+                    tabindex="0"
+                    class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow ">
+                    <li><a>Home</a></li>
+                    <li><a>Shop</a></li>
+                    <li><a>Contact</a></li>
+                  </ul>
+                </div>
+                <div class="navbar-start">
+                  <img src="./images/logo.webp" alt="" class="w-8 h-8 hidden sm:flex">
+                  <a class="btn btn-ghost text-4xl font-bold pacifo px-2 ">Petoo</a>
+                </div>
+                <div class="hidden sm:flex mr-4 navbar-center">
+                  <ul class="menu menu-horizontal px-1">
+                    <li><a class="text-lg font-medium text-gray-400">Home</a></li>
+                    <li><a class="text-lg font-medium text-gray-400">Shop</a></li>
+                    <li><a class="text-lg font-medium text-gray-400">Contact</a></li>
+                  </ul>
+                </div>
+                <div class="navbar-end">
+                  <div class="dropdown dropdown-end">
+                    <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
+                      <div class="w-10 rounded-full border border-emerald-100 flex justify-center items-center pt-1">
+                        <i class="fa-regular fa-user text-xl text-gray-400"></i>
+                      </div>
+                    </div>
+                    <ul
+                      tabindex="0"
+                      class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                      <li>
+                        <a class="justify-between">
+                          Profile
+                          <span class="badge">New</span>
+                        </a>
+                      </li>
+                      <li><a>Settings</a></li>
+                      <li><a>Logout</a></li>
+                    </ul>
+                  </div>
+                </div>
+            </div>
+        </nav>
+        <section class="hero-container w-11/12 mx-auto">
+          <div class="hero bg-base-200 h-auto bg-white w-full sm:w-4/5 mx-auto">
+            <div class="h-full text-center flex flex-col justify-between items-center gap-4">
+                <h4 class="text-gray-400 font-bold text-lg sm:text-2xl">Bringing Families Together ❤️‍🔥</h4>
+                <h1 class=" text-3xl sm:text-5xl font-bold">Peddy: Where Paws and Hearts Unite</h1>
+                <p class="py-6 text-[12px] sm:text-[20px]">
+                  Discover your perfect furry friend with us. Peddy is dedicated to connecting lovable pets with their forever homes. Our mission is to bring joy and companionship to both pets and their new families.
+                </p>
+                <button class="hover:text-[#0e7a81] hover:bg-white px-4 py-2 text-md font-bold border rounded-lg text-white bg-[#0e7a81]" id="viewBtn">View More</button>
+                <img src="./images/pet.webp" alt="">
+            </div>
+          </div>
+        </section>
+    </header>
+    <main class="w-11/12 mx-auto mb-16" id="adoptPage">
+      <div class="lg:w-1/2 text-center mx-auto mb-10">
+        <h1 class="text-4xl font-bold ">Adopt  Your  Best Friend</h1><br>
+        <p>At the end of the day, you're not just gaining a pet. You're gaining a loyal friend, a source of joy, and a furry confidant who'll be there through thick and thin. Ready to make a life-changing decision? 🐾❤️</p>
+      </div>
+      <!-- Categories Buttons -->
+      <div id="categories" class="w-11/12 mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center">
+      </div>
+      <!-- Sorting price -->
+      <div class="flex justify-between items-center mt-6">
+        <h1 class="font-bold text-3xl">Best Deal For You</h1>
+        <button class="hover:text-[#0e7a81] hover:bg-white hover:border bg-[#0e7a81] font-normal text-2xl px-6 py-3 text-white rounded-lg " onclick="descendingSort()">Sort by price <i class="fa-solid fa-arrow-down-1-9"></i></button>
+      </div>
+      <!-- Spinner -->
+      <div class="w-[70%] flex justify-center items-center"><span id="spinner" class="loading loading-infinity loading-lg"></span></div>
+      <!-- Pet cards -->
+      <section class="mx-auto flex gap-6  mt-11">
+        <div id="cards" class="h-full w-[70%] sm:w-4/5 gap-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 "></div>
+        <div  id="imgContainer" class="border h-auto w-[30%] sm:w-1/5 p-3 rounded-2xl grid grid-flow-row auto-rows-max grid-cols-1 xl:grid-cols-2 gap-6">
+        </div>
+      </section>
+      <!--  modal for details method -->
+      <dialog id="detailsModal" class="modal modal-bottom sm:modal-middle">
+        <div class="modal-box flex flex-col gap-2">
+          <div id="modalContent"></div>
+          <div class="modal-action flex justify-center">
+            <form method="dialog">
+              <!-- if there is a button in form, it will close the modal -->
+              <button class="border border-[#0e7a81] bg-[#e6f1f2] px-6 py-3 text-lg font-bold rounded-xl">Cancle</button>
+            </form>
+          </div>
+        </div>
+      </dialog>
+      <!--  modal adopt method -->
+      <button class="btn hidden" onclick="adoptModal.showModal()">open modal</button>
+      <dialog id="adoptModal" class="modal modal-bottom sm:modal-middle ">
+        <div id="adoptContainer" class="modal-box w-[350px] h-[250px]">
+        </div>
+      </dialog>
+    </main>
+    <footer class="bg-black py-12 ">
+      <section class="w-11/12 mx-auto grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-items-center">
+        <div class="">
+          <div class="flex items-center mb-5">
+            <img src="./images/logo.webp" alt="" class="w-8 h-8 ">
+            <a class="text-4xl font-bold pacifo px-2 text-white">Petoo</a>
+          </div>
+          <div class="text-white mb-3">
+            <p>Location: kandirpar, Cumilla 3500.</p>
+            <p>402</p>
+            <p>Phone: +001 44 22 89</p>
+            <p>Email: user@gmail.com</p>
+            <p>Opening hours: 9.00AM-5.00PM </p>
+          </div>
+          <div class="text-white flex gap-6 text-3xl">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-youtube"></i>
+            <i class="fa-brands fa-x-twitter"></i>
+          </div>
+        </div>
+        <div class="text-white">
+          <h1 class="text-2xl font-bold mb-5">Useful Link</h1>
+          <a href="#"><p>Home</p></a>
+          <a href="#"><p>Shop</p></a>
+          <a href="#"><p>Contact</p></a>
+          <a href="#"><p>Profile</p></a>
+          <a href="#"><p>About Us</p></a>
+        </div>
+        <div class="sm:col-span-2 lg:col-span-1">
+          <h1 class="text-white font-bold text-lg mb-6">Drop a Message</h1>
+          <input type="email" placeholder="Enter your email" class="p-2 bg-zinc-900 rounded-lg mb-2"><br>
+          <button class="text-white font-bold px-16 py-2 rounded-lg bg-[#0e7a81] ">Subscibe</button>
+        </div>
+      </section>
+    </footer>
+    <script src="./script.js"></script>
+</body>
+</html>
